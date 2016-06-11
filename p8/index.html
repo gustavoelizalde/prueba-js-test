@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Prueba</title>
+    
+    <style type="text/css">
+
+      
+      
+
+    </style>
+    
+  </head>
+  <body>
+    
+
+      <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+        </ul>
+        
+        <label for="caption">Texto para agregar
+          <input type="text" name="caption" id="caption">
+        </label>
+
+        <label for="caption">Color
+          <input type="text" name="color" id="color">
+        </label>
+
+        <a href="#" data-action="add">Agregar</a>
+        <a href="#" data-action="del_first">Eliminar Primero</a>
+    
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript">
+      var count = 6;
+
+      $("[data-action=add]").on("click", function(e){
+          var string = $("input[name=caption]").val();
+          var color = $("input[name=color]").val();
+
+          if ( string != "" ){
+            if (color != "") {
+              $("ul").append("<li style='color:"+color+"'>" + string + "</li>");
+              $("input[name=caption]").val("");
+              $("input[name=color]").val("");
+            } else {
+              $("ul").append("<li>" + string + "</li>");
+              $("input[name=caption]").val("");
+            }
+          } else {
+            var new_count = count++;
+            $("ul").append("<li>" + new_count + "</li>");
+          }
+      })
+
+
+      $("[data-action=del_first]").on("click", function(e){
+
+          $("ul li:first-child").remove();
+      })
+      
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Prueba</title>
+    
+    <style type="text/css">
+
+      
+      
+
+    </style>
+    
+  </head>
+  <body>
+
+    
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript">
+
+      'use strict';
+
+      var n = parseInt(prompt("Ingresa un numero:"));
+
+      var drawSquare = function(v) {
+        for(var x = 0; x < v; x++){
+
+          for(var y = 0; y < v; y++){
+            
+            if ( x == 0 || y == 0 || x == v-1 || y == v-1){
+              document.write("*");
+            } else {
+              document.write("0");
+            }
+            
+          }
+          document.write("<br>");
+        } 
+      }
+
+      drawSquare(n);
+      
+
+    </script>
+
+  </body>
+</html>

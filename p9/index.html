@@ -1,0 +1,91 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Prueba</title>
+    
+    <style type="text/css">
+
+      
+      
+
+    </style>
+    
+  </head>
+  <body>
+    
+
+    <form name="registro">
+        
+        <label for="nombre">Nombre: <br>
+          <input type="text" name="nombre" id="nombre">
+        </label>
+
+        <br>
+
+        <label for="email">Email: <br>
+          <input type="email" name="email" id="email">
+        </label>
+
+        <br>  
+
+        <label for="gender">Género: <br>
+            <select name="gender" id="gender">
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+            </select>
+        </label>
+
+
+        <br> 
+
+        <input type="submit" value="Enviar">
+
+    </form>
+    
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript">
+
+      
+      var Persona = function(nombre, email, genero){
+        this.nombre = nombre;
+        this.email = email;
+        this.genero = genero;
+      }
+
+      var personas = [];
+
+
+      $("form[name=registro]").on("submit", function(e){
+        var nombre = $("input[name=nombre]").val();
+        var email = $("input[name=email]").val();
+        var genero = $("select[name=gender]").val();
+
+        if (email != "") {
+          // prevengo el envío del form para inspeccionar los objetos
+          e.preventDefault();
+          e.stopPropagation();
+
+          var person = new Persona(nombre, email, genero);
+          personas.push(person);
+          console.log(personas);
+
+        } else {
+          e.preventDefault();
+          e.stopPropagation();
+          alert("Debes ingresar un email mother fucker");
+        }
+
+      });
+      
+
+    </script>
+
+  </body>
+</html>

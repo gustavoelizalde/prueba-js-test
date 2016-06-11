@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Prueba</title>
+    
+    <style type="text/css">
+
+      
+      
+
+    </style>
+    
+  </head>
+  <body>
+
+    
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script type="text/javascript">
+
+      'use strict';
+
+      var Telefono = function(numero, marca, color){
+        this.numero = numero;
+        this.marca = marca;
+        this.color = color;
+        this.contador = 0;
+
+
+        this.marcarTelefono = function(){
+          return this.contador += 1;
+        }
+
+      }
+
+
+      var filterbyBrand = function(array, marca) {
+        var filterbybrand = [];
+
+        for (var i = 0; i < array.length; i++){
+          if (array[i].marca == marca) {
+            console.log(array[i].marca);
+            filterbybrand.push(array[i].numero);
+          }
+        }
+
+        return filterbybrand;
+      }
+      
+
+      //var telgus = new Telefono(56213694, "iPhone", "Gris");
+
+      //console.log(telgus.marcarTelefono());
+
+      var tel1 = new Telefono(56213694, "iPhone", "Gris");
+      var tel2 = new Telefono(9290404, "iPhone", "Gris");
+      var tel3 = new Telefono(11111111, "Samsumg", "Blanco");
+
+      // Creo Arreglo de telefonos y cargo los objetos al array
+      var telefonos = [];
+
+      telefonos.push(tel1);
+      telefonos.push(tel2);
+      telefonos.push(tel3);
+
+
+
+
+
+
+
+      
+
+    </script>
+
+  </body>
+</html>
