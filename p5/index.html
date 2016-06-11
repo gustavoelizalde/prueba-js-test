@@ -39,7 +39,7 @@
 
       }
 
-
+      /*
       var filterbyBrand = function(array, marca) {
         var filterbybrand = [];
 
@@ -51,8 +51,14 @@
         }
 
         return filterbybrand;
-      }
+      }*/
       
+      var filterbyBrand = function(array, marca){
+        var return_filters = array.filter(function(brand){
+          return brand.marca == marca;
+        })
+        return return_filters;
+      }
 
       //var telgus = new Telefono(56213694, "iPhone", "Gris");
 
@@ -68,12 +74,6 @@
       telefonos.push(tel1);
       telefonos.push(tel2);
       telefonos.push(tel3);
-
-
-
-
-
-
 
       
 
